@@ -2,7 +2,7 @@ require "spec_helper"
 
 feature "On the homepage" do 
 
-	scenario "user can submit confession" do 
+  scenario "user can submit confession" do 
 		visit '/'
     expect(Confession.count).to eq 0
     add_confession("Hadi is a naughty boy")
