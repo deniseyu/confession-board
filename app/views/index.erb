@@ -3,9 +3,7 @@
   <input type='submit' value='Confess!'>
 </form>
 
-# <% if @content %>
-  
-#   <%= %>
-
-
-# <% end %>
+Latest Confessions:
+<% @confessions.each do |confession| %>
+	<span class="update"><%= confession.content %> </span>
+<% end %>

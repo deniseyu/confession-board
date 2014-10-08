@@ -9,11 +9,11 @@ feature "On the homepage" do
     expect(Confession.count).to eq 1
   end
 
- #  scenario "user should see submitted confessions" do 
-
-
-	# 	expect(page).to have_content("Hadi is a naughty boy")
-	# end
+  scenario "user should see submitted confessions" do 
+    visit '/'
+    add_confession("Hadi is a naughty boy")
+		expect(page).to have_content("Hadi is a naughty boy")
+	end
 	
 end
 

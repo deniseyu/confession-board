@@ -13,6 +13,7 @@ DataMapper.auto_upgrade!
 class ConfessionBoard < Sinatra::Base
 
   get '/' do
+    @confessions = Confession.all
     erb :index
   end
 
