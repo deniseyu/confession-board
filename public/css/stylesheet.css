@@ -1,0 +1,51 @@
+body {
+  background-color: black;
+}
+
+div.banner {
+  width: 100%;
+}
+
+div.update {
+  padding: 10px;
+  padding-left: 30px;
+  background-color: #821010;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.confess_box {
+  margin: auto;
+  padding-left: 40px;
+  padding-top: 20px;
+}
+
+#form_input {
+  width: 600px;
+  height: 50px;
+  padding: 10px;
+  font-family: Courier;
+  font-size: 16px;
+}
+
+#submit_button {
+  width: 100px;
+  height: 50px;
+  padding: 10px;
+  background-color: #821010;
+  font-size: 18px;
+  border-color: #821010;
+}
+
+p.update {
+  color: white;
+  font-family: Courier;
+}
+
+h1 {
+  color: white;
+  font-family: Courier;
+  font-weight: bold;
+  margin-left: 33%;
+}

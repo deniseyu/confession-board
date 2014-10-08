@@ -11,6 +11,7 @@ DataMapper.finalize
 DataMapper.auto_upgrade!
 
 class ConfessionBoard < Sinatra::Base
+  set :public_folder, 'public'
 
   get '/' do
     @confessions = Confession.all

@@ -1,9 +1,26 @@
-<form action='/confess' method='POST'>
-  <input type='text' name='content'>
-  <input type='submit' value='Confess!'>
-</form>
+<html>
+<head>
+  <link href="css/stylesheet.css" type="text/css" rel="stylesheet" />
+<!-- This Confession Board is currently in beta mode :) -->
 
-Latest Confessions:
-<% @confessions.each do |confession| %>
-	<span class="update"><%= confession.content %> </span>
+</head>
+
+<body>
+
+<div class='banner'><img src='/images/banner.png' width='100%'></div>
+
+<div class='confess_box'>
+<form action='/confess' method='POST'>
+  <input type='text' name='content' width='600' id='form_input'> &nbsp;&nbsp;
+  <input type='submit' value='Confess!' id='submit_button'>
+</form>
+</div>
+<br><br>
+<h1>Latest Confessions:</h1>
+<% @confessions.reverse.each do |confession| %>
+	<div class='update'><p class='update'><%= confession.content %></p></div><br>
 <% end %>
+
+</body>
+
+</html>
