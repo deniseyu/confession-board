@@ -3,7 +3,7 @@ require 'data_mapper'
 
 env = ENV["RACK_ENV"] || "development"
 
-DataMapper.setup(:default, "postgres://localhost/confession_board_#{env}")
+DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/confession_board_#{env}")
 
 require './lib/confession'
 
