@@ -1,8 +1,10 @@
 require 'sinatra/base'
 
 class ConfessionBoard < Sinatra::Base
+
+
   get '/' do
-    'Hello ConfessionBoard!'
+    erb :index
   end
 
   # start the server if ruby file executed directly
