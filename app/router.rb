@@ -16,8 +16,10 @@ class ConfessionBoard < Sinatra::Base
     erb :index
   end
 
-  post '/' do
-
+  post '/confess' do 
+    content = params["content"]
+    Confession.create(:content => content)
+    redirect to '/'
   end
 
   # start the server if ruby file executed directly
