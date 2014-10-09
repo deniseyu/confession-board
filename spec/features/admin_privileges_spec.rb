@@ -1,13 +1,8 @@
 require 'spec_helper'
 require 'launchy'
-# require 'test/unit'
-# require 'rack/test'
-
-# class ApplicationTest  < Test::Unit::TestCase 
 
 feature "admin can" do 
 
-	# include Rack::Test::Methods
 
 	def app
     ConfessionBoard
@@ -42,14 +37,11 @@ feature "admin can" do
 		page.driver.browser.basic_authorize('admin', $SUPER_SECRET_PASSWORD)
 		visit '/supersecretadmin'
 		expect(page).to have_content("Hadi is a naughty boy")
-		save_and_open_page
 		fill_in 'delete_id', :with => '10'
 		click_button 'Delete!'
 		expect(page).not_to have_content("Hadi is a naughty boy")
-		save_and_open_page
 	end
 	
 end
 
-# end
 
