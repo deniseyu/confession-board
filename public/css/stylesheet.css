@@ -10,6 +10,10 @@ div.update {
   padding: 10px;
   padding-left: 30px;
   background-color: #821010;
+  opacity: 0.85;
+  border-width: 3px;
+  border-color: #821010;
+  border-radius: 10px;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
@@ -45,6 +49,16 @@ div.confess_box {
 p.update {
   color: white;
   font-family: Courier;
+}
+
+p.time {
+  text-align: right;
+  font-family: Courier;
+  font-weight: bold;
+  color: white;
+  font-size: 10px;
+  padding-right: 10px;
+
 }
 
 h1 {

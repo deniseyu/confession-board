@@ -3,7 +3,6 @@ require 'launchy'
 
 feature "admin can" do 
 
-
 	def app
     ConfessionBoard
   end

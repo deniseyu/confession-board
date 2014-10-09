@@ -9,3 +9,4 @@ gem "capybara"
 gem "cucumber-sinatra"
 gem "database_cleaner"
 gem "launchy"
+gem 'dm-timestamps'
