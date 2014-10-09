@@ -16,7 +16,7 @@ div.update {
 }
 
 div.confess_box {
-  margin: auto;
+  margin-left: 20%;
   padding-left: 40px;
   padding-top: 20px;
 }
@@ -27,6 +27,8 @@ div.confess_box {
   padding: 10px;
   font-family: Courier;
   font-size: 16px;
+  background-color: gray;
+  border-width: 0px;
 }
 
 #submit_button {
@@ -34,7 +36,9 @@ div.confess_box {
   height: 50px;
   padding: 10px;
   background-color: #821010;
-  font-size: 18px;
+  font-size: 16px;
+  font-family: Courier;
+  color: white;
   border-color: #821010;
 }
 
