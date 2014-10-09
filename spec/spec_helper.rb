@@ -1,7 +1,10 @@
+ENV["RACK_ENV"] = 'test'
+
 require 'capybara/rspec'
 require 'capybara' 
 require './app/router'
 require 'database_cleaner'
+require 'launchy'
 
 Capybara.app = ConfessionBoard 
 
@@ -26,7 +29,7 @@ RSpec.configure do |config|
     end
 
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
-  end
+    end
 
   end
 
