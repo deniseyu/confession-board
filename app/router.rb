@@ -29,6 +29,13 @@ class ConfessionBoard < Sinatra::Base
     erb :admin
   end
 
+  post '/supersecretadmin' do
+    delete_id = params["delete_id"]
+    item = Confession.first(:id => delete_id)
+    item.destroy
+    redirect '/supersecretadmin'
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

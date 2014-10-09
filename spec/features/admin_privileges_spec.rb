@@ -18,9 +18,12 @@ feature "admin can" do
 
 	scenario "delete an objectionable confession" do 
 		visit '/supersecretadmin'
-		fill_in 'delete_id', :with => '1'
+		expect(page).to have_content("Hadi is a naughty boy")
+		fill_in 'delete_id', :with => '4'
 		click_button 'Delete!'
-		expect(page).not_to have_content("1. Hadi is a naughty boy")
+		visit '/supersecretadmin'
+		expect(page).not_to have_content("Hadi is a naughty boy")
+		save_and_open_page
 	end
 
 	
