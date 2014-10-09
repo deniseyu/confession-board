@@ -2,6 +2,8 @@
 
 ENV['RACK_ENV'] = 'test'
 
+ENV['TZ'] = 'GMT'
+
 require File.join(File.dirname(__FILE__), '..', '..', 'app/router.rb')
 
 require 'capybara'
