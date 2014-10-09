@@ -25,6 +25,6 @@ feature "admin can" do
 		expect(page).not_to have_content("Hadi is a naughty boy")
 		save_and_open_page
 	end
-
 	
 end
+
