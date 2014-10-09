@@ -1,7 +1,28 @@
 require 'spec_helper'
 require 'launchy'
+# require 'test/unit'
+# require 'rack/test'
+
+# class ApplicationTest  < Test::Unit::TestCase 
 
 feature "admin can" do 
+
+	# include Rack::Test::Methods
+
+	def app
+    ConfessionBoard
+  end
+
+  scenario "test without authenication" do
+  	visit '/supersecretadmin'
+  	expect(page.status_code).to eq 401
+  end
+
+  scenario "test with login credientials" do
+  	page.driver.browser.basic_authorize('admin', $SUPER_SECRET_PASSWORD)
+  	visit '/supersecretadmin'
+  	expect(page.status_code).to eq 200
+  end
 
 	before (:each) {
 		Confession.create(:content => "Hadi is a naughty boy")
@@ -10,21 +31,25 @@ feature "admin can" do
 	}
 
 	scenario "see a list of confessions with IDs" do
+		page.driver.browser.basic_authorize('admin', $SUPER_SECRET_PASSWORD)
 		visit '/supersecretadmin'
-		expect(page).to have_content("1. Hadi is a naughty boy")
-		expect(page).to have_content("2. Sean stole Hadi's umbrella")
-		expect(page).to have_content("3. Yvette and Denise are *awesome*")
+		expect(page).to have_content("Hadi is a naughty boy")
+		expect(page).to have_content("Sean stole Hadi's umbrella")
+		expect(page).to have_content("Yvette and Denise are *awesome*")
 	end
 
 	scenario "delete an objectionable confession" do 
+		page.driver.browser.basic_authorize('admin', $SUPER_SECRET_PASSWORD)
 		visit '/supersecretadmin'
 		expect(page).to have_content("Hadi is a naughty boy")
-		fill_in 'delete_id', :with => '4'
+		save_and_open_page
+		fill_in 'delete_id', :with => '10'
 		click_button 'Delete!'
-		visit '/supersecretadmin'
 		expect(page).not_to have_content("Hadi is a naughty boy")
 		save_and_open_page
 	end
 	
 end
+
+# end
 
