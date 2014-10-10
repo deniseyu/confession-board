@@ -20,7 +20,7 @@
 <h1>Latest Confessions:</h1>
 <% @confessions.reverse.each do |confession| %>
 	<div class='update'>
-    <p class='update'><%= confession.content %></p>
+    <p class='update'><%=h confession.content %></p>
     <p class='time'>
       <a href='upvote/<%= confession.id %>'><img src='/images/happy47.png' width='15px' title='upvote!'></a>
       <a href='downvote/<%= confession.id %>'><img src='/images/sad44.png' width='15px' title='downvote!'></a>&nbsp;&nbsp;

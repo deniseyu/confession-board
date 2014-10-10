@@ -4,12 +4,8 @@ require 'dm-core'
 require 'dm-migrations'
 require './lib/confession'
 require './secret.rb'
+require './app/datamapper_helper'
 
-env = ENV["RACK_ENV"] || "development"
-
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/confession_board_#{env}")
-DataMapper.finalize
-DataMapper.auto_upgrade!
 
 class ConfessionBoard < Sinatra::Base
   set :public_folder, 'public'
