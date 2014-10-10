@@ -4,7 +4,6 @@ require 'dm-core'
 require 'dm-migrations'
 require './lib/confession'
 require './secret.rb'
-require 'rack/protection'
 
 env = ENV["RACK_ENV"] || "development"
 
