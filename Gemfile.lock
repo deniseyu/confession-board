@@ -11,7 +11,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    crass (0.2.1)
     data_mapper (1.2.0)
       dm-aggregates (~> 1.2.0)
       dm-constraints (~> 1.2.0)
@@ -72,8 +71,6 @@ GEM
     multi_json (1.10.1)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
-    nokogumbo (1.1.12)
-      nokogiri
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
@@ -91,10 +88,6 @@ GEM
     rspec-mocks (3.1.2)
       rspec-support (~> 3.1.0)
     rspec-support (3.1.1)
-    sanitize (3.0.2)
-      crass (~> 0.2.0)
-      nokogiri (>= 1.4.4)
-      nokogumbo (= 1.1.12)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -115,7 +108,5 @@ DEPENDENCIES
   dm-postgres-adapter
   dm-timestamps
   launchy
-  rack-protection
   rspec
-  sanitize
   sinatra
