@@ -14,10 +14,30 @@ feature "On the homepage" do
     add_confession("Hadi is a naughty boy")
 		expect(page).to have_content("Hadi is a naughty boy")
 	end
-	
+
+  scenario "user can upvote a submitted confession" do 
+    visit '/'
+    add_confession("Hadi is a naughty boy")
+    expect(page).to have_content "0 upvote(s)"
+    click_link 'Upvote'
+    expect(page).to have_content "1 upvote(s)"
+  end
+
+  scenario "user can downvote a submitted confession" do 
+    visit '/'
+    add_confession ("Hadi is a naughty boy")
+    expect(page).to have_content "0 upvote(s)"
+    click_link 'Upvote'
+    expect(page).to have_content "1 upvote(s)"
+    click_link 'Downvote'
+    expect(page).to have_content "0 upvote(s)"
+  end
+
+
+  def add_confession(content)
+      fill_in 'content', :with => content
+      click_button 'Confess!'
+  end
+
 end
 
-def add_confession(content)
-    fill_in 'content', :with => content
-    click_button 'Confess!'
-end

@@ -1,13 +1,14 @@
 require 'sinatra/base'
 require 'data_mapper'
+require 'dm-core'
+require 'dm-migrations'
+require './lib/confession'
+require './secret.rb'
+require 'rack/protection'
 
 env = ENV["RACK_ENV"] || "development"
 
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/confession_board_#{env}")
-
-require './lib/confession'
-require './secret.rb'
-
 DataMapper.finalize
 DataMapper.auto_upgrade!
 
@@ -31,11 +32,16 @@ class ConfessionBoard < Sinatra::Base
     erb :admin
   end
 
-  post '/supersecretadmin' do
-    delete_id = params["delete_id"]
-    item = Confession.first(:id => delete_id)
-    item.destroy
-    redirect '/supersecretadmin'
+  get '/upvote/:id' do 
+    confession = Confession.first(:id => params[:id])
+    confession.upvote
+    redirect '/'
+  end
+
+  get '/downvote/:id' do 
+    confession = Confession.first(:id => params[:id])
+    confession.downvote
+    redirect '/'
   end
 
   def protected!
@@ -49,6 +55,10 @@ class ConfessionBoard < Sinatra::Base
     @auth.provided? and @auth.basic? and @auth.credentials == ['admin', $SUPER_SECRET_PASSWORD]
   end
 
-  # start the server if ruby file executed directly
-  run! if app_file == $0
-end
+  helpers do
+      include Rack::Utils
+      alias_method :h, :escape_html
+  end
+
+
+end 

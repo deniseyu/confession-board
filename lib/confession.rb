@@ -7,9 +7,16 @@ class Confession
 	property :id, 			Serial
 	property :content,	String, :length => 140
   property :created_at, DateTime
+  property :votes,    Integer, :default => 0
 
-  # def timestamp
-  #   Time.now.strftime("Posted at %H:%M, %e %b %y")
-  # end
+  def upvote
+    self.votes += 1
+    self.save
+  end
+
+  def downvote
+    self.votes -= 1
+    self.save
+  end
 
 end
