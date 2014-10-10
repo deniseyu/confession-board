@@ -1,1 +1,1 @@
-$SUPER_SECRET_PASSWORD = "iliketurtles"
+$SUPER_SECRET_PASSWORD = "ilikepandas"
