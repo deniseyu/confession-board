@@ -5,6 +5,7 @@ require 'dm-migrations'
 require './lib/confession'
 require './secret.rb'
 require './app/datamapper_helper'
+require 'rake'
 
 
 class ConfessionBoard < Sinatra::Base
