@@ -3,7 +3,6 @@ require 'data_mapper'
 require 'dm-core'
 require 'dm-migrations'
 require './lib/confession'
-require './secret.rb'
 require './app/datamapper_helper'
 require 'rake'
 
