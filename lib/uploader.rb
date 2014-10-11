@@ -1,18 +1,18 @@
-require 'carrierwave/datamapper'
+# require 'carrierwave/datamapper'
 
-class Uploader < CarrierWave::Uploader::Base
+# class Uploader < CarrierWave::Uploader::Base
 
-  include CarrierWave::MiniMagick
+#   include CarrierWave::MiniMagick
 
-end
+# end
 
-class Image 
+# class Image 
 
-  include DataMapper::Resource
+#   include DataMapper::Resource
 
-  property :id,         Serial
-  property :description, Text
+#   property :id,         Serial
+#   property :description, Text
 
-  mount_uploader :image, Uploader
+#   mount_uploader :image, Uploader
 
-end
+# end
