@@ -10,3 +10,5 @@ gem "capybara"
 gem "database_cleaner"
 gem "launchy"
 gem 'dm-timestamps'
+gem 'rake'
+gem 'pg'
