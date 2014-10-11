@@ -18,19 +18,19 @@ feature "On the homepage" do
   scenario "user can upvote a submitted confession" do 
     visit '/'
     add_confession("Hadi is a naughty boy")
-    expect(page).to have_content "0 upvote(s)"
-    click_link 'Upvote'
-    expect(page).to have_content "1 upvote(s)"
+    expect(page).to have_content "0 point(s)"
+    click_link('smiley_face')   
+    expect(page).to have_content "1 point(s)"
   end
 
   scenario "user can downvote a submitted confession" do 
     visit '/'
     add_confession ("Hadi is a naughty boy")
-    expect(page).to have_content "0 upvote(s)"
-    click_link 'Upvote'
-    expect(page).to have_content "1 upvote(s)"
-    click_link 'Downvote'
-    expect(page).to have_content "0 upvote(s)"
+    expect(page).to have_content "0 point(s)"
+    click_link 'smiley_face'
+    expect(page).to have_content "1 point(s)"
+    click_link 'frowny_face'
+    expect(page).to have_content "0 point(s)"
   end
 
 

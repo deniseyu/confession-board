@@ -22,8 +22,8 @@
 	<div class='update'>
     <p class='update'><%=h confession.content %></p>
     <p class='time'>
-      <a href='upvote/<%= confession.id %>'><img src='/images/happy47.png' width='15px' title='upvote!'></a>
-      <a href='downvote/<%= confession.id %>'><img src='/images/sad44.png' width='15px' title='downvote!'></a>&nbsp;&nbsp;
+      <a href='upvote/<%= confession.id %>'><img src='/images/happy47.png' width='15px' alt='smiley_face'></a>
+      <a href='downvote/<%= confession.id %>'><img src='/images/sad44.png' width='15px' alt='frowny_face!'></a>&nbsp;&nbsp;
       <%= confession.votes %> point(s)&nbsp;&nbsp;||&nbsp;
       <%= confession.created_at.to_s.chars[0..15].each_slice(10).to_a.rotate.flatten.drop(1).insert(5, " ").join %></p>
     </div><br>
